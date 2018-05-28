@@ -26,13 +26,6 @@ public class UserController {
     public List<User> index() {
         return userRepository.findAll();
     }
-/*
-    //lista usuário por id
-    @GetMapping("/user/{userId}")
-    public User show(@PathVariable (value = "userId") Long userId) {
-        //Long userId = Long.parseLong(userId);
-        return userRepository.findById(userId);
-    }*/
 
     //lista todos os usuários por país
     @GetMapping("/country/{countryId}/user")
