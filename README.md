@@ -6,6 +6,11 @@ Testes realizados utilizando o aplicativo Postman.
 
 Deve-se criar um banco de dados MySQL com o nome "restapi" para utilização (ou alterar o spring.datasource.url no arquivo src/main/resources/application.properties).
 
+```
+CREATE DATABASE restapi;
+```
+
+
 ## Country
 ```
 GET    http://localhost:8080/country ---------------------------------------- Lista todos os países
