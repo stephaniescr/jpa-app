@@ -16,19 +16,19 @@ public class CountryController {
     @Autowired
     CountryRepository countryRepository;
     
-    //Lista todos os países
+    //lista todos os países
     @GetMapping("/country")
     public Page<Country> getAllCountries(Pageable pageable) {
         return countryRepository.findAll(pageable);
     }
     
-    //Cria um país
+    //cria um país
     @PostMapping("/country")
     public Country createCountry(@Valid @RequestBody Country country) {
         return countryRepository.save(country);
     }
     
-    //Atualiza um país
+    //atualiza um país
     @PutMapping("/country/{countryId}")
     public Country updateCountry(@PathVariable Long countryId, @Valid @RequestBody Country countryRequest) {
         return countryRepository.findById(countryId).map(country -> {
@@ -37,7 +37,7 @@ public class CountryController {
         }).orElseThrow(() -> new ResourceNotFoundException("CountryId " + countryId + " not found"));
     }
 
-    //Deleta um país
+    //deleta um país
     @DeleteMapping("/country/{countryId}")
     public ResponseEntity<?> deleteCountry(@PathVariable Long countryId) {
         return countryRepository.findById(countryId).map(country -> {
